@@ -1,6 +1,7 @@
 package autosuggestion;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class redbus {
+public class red {
 	public WebDriver driver;
 	@BeforeMethod
 	public void openapp()
@@ -21,23 +22,15 @@ public class redbus {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	@Test
-	public void help() throws InterruptedException
+	public void instagram()
 	{
 		driver.findElement(By.xpath("//button[text()='Accept All']")).click();
-		driver.findElement(By.xpath("//a[text()='Help']")).click();
-		driver.switchTo().frame(0);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[text()='Terms & Conditions']")).click();
-	}
-    public void facebook()
-	{
 		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,4000)");
-		driver.findElement(By.xpath("//span[@class='twittericon icon-Twitter']")).click();
-		driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-12181gd r-1pi2tsx r-1ny4l3l r-o7ynqc r-6416eg r-13qz1uu'])[1]")).click();
+		js.executeScript("window.scrollBy(0,5000)");
+		driver.findElement(By.xpath("(//img[@class='social-logo'])[2]")).click();
 	}
 	@AfterMethod
-	public void closeapp()
+	public void closeApp()
 	{
 		driver.quit();
 	}
